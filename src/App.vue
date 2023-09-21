@@ -1,47 +1,40 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { onMounted, ref } from "vue";
+
+import Magnify from 'vue-material-design-icons/Magnify.vue';
+import HomeOutline from 'vue-material-design-icons/HomeOutline.vue';
+import TrendingUp from 'vue-material-design-icons/TrendingUp.vue';
+import Television from 'vue-material-design-icons/Television.vue';
+import MovieOutline from 'vue-material-design-icons/MovieOutline.vue';
+import Plus from 'vue-material-design-icons/Plus.vue';
+import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue';
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="fixed w-full h-screen bg-black">
+    <div v-if="!showFullVideo" id="SideNav" class="flex z-40 items-center w-[120px] h-screen bg-black relative">
+      N  
+      <div>
+          <div class="py-2 mx-10 my-6">
+            <Magnify fillColor="#FFFFFF" :size="40" class="cursor-pointer" />
+          </div>
+          <div class="py-2 mx-10 my-6 border-b-4 border-b-red-500">
+            <HomeOutline fillColor="#FFFFFF" :size="40" class="cursor-pointer" />
+          </div>
+          <div class="py-2 mx-10 my-6">
+            <TrendingUp fillColor="#FFFFFF" :size="40" class="cursor-pointer" />
+          </div>
+          <div class="py-2 mx-10 my-6">
+            <Television fillColor="#FFFFFF" :size="40" class="cursor-pointer" />
+          </div>
+          <div class="py-2 mx-10 my-6">
+            <MovieOutline fillColor="#FFFFFF" :size="40" class="cursor-pointer" />
+          </div>
+          <div class="py-2 mx-10 my-6">
+            <Plus fillColor="#FFFFFF" :size="40" class="cursor-pointer" />
+          </div>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
