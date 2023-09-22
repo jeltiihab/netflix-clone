@@ -11,7 +11,9 @@ import Plus from 'vue-material-design-icons/Plus.vue';
 import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue';
 
 
+import VideoCarousel from "@/components/VideoCarousel.vue";
 import MovieDetails from "@/components/MovieDetails.vue"
+
 
 import { useMovieStore } from './stores/movie'
 import { storeToRefs } from "pinia"
@@ -61,6 +63,13 @@ onMounted(() => {
           loop
           class="absolute z-0 h-[600px] right-0 top-0"
         />
+      </div>
+
+      <div class="fixed z-30 bottom-0 right-0 w-full h-[55%] pl-[120px] overflow-y-auto">
+        <videoCarousel class="pb-14 pt-14" category="Popular movies" :movies="movies[0]" />
+        <videoCarousel class="pb-14" category="Horror movies" :movies="movies[1]" />
+        <videoCarousel class="pb-32" category="Featured movies" :movies="movies[2]" />
+
       </div>
     </div>
   </div>
